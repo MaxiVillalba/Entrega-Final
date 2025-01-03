@@ -21,6 +21,10 @@ class ProductDao{
   async delete(id) {
     return await productModel.findByIdAndDelete(id);
   }
+
+  async getTotalProducts(query) {
+    return await productModel.countDocuments(query);
+  }
 }
 
 export const productDao = new ProductDao();
